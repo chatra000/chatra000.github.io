@@ -26,7 +26,7 @@
 <p>
 <a href="https://www.instagram.com/system.khv/"><img src="img/inst_1.png" width="120"></a><br>
 </p>
-<font color="#747373">- <?php echo date('Y'); ?> -</font>
+<font color="#747373">- <span id="current-year-display"></span> -</font>
 <!-- end .content --></div>
 <!-- end .footer --></div>
 <!-- end .container --></body>
@@ -63,4 +63,21 @@
 (function(){ var widget_id = 'Ko2RamMmbH';var d=document;var w=window;function l(){
 var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
         <!-- {/literal} END JIVOSITE CODE -->
+<script>
+        // 1. Функция, которая находит и обновляет год
+        function displayCurrentYear() {
+            // Создаём новый объект Date
+            const dateObject = new Date(); 
+            // Получаем полный год (например, 2025)
+            const year = dateObject.getFullYear();
+            // Находим элемент <span> по его ID
+            const yearElement = document.getElementById("current-year-display");
+            // Обновляем содержимое элемента, чтобы показать год
+            if (yearElement) {
+                yearElement.textContent = year;
+            }
+        }
+        // 2. Вызываем функцию, чтобы она выполнилась при загрузке страницы
+        displayCurrentYear();
+</script>
 </html>
